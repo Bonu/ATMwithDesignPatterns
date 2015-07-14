@@ -6,6 +6,10 @@ public class NormalState extends MachineState {
 	{
 		this.cashAvailable = state.cashAvailable;
 	}
+	public NormalState(ATMMachine machine)
+	{
+		this.machine = machine;
+	}
 	@Override
 	public void Deposit(double amount) throws Exception {
 		if(cashAvailable+amount == cashCapacity)
