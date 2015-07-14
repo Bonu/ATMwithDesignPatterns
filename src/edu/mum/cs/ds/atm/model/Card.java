@@ -9,28 +9,28 @@ public class Card implements Serializable {
 	 */
 	private static final long serialVersionUID = -3378698082789928290L;
 	
-	private long number;
+	private String number;
 	private int pin;
 	private String validThrough;
-	private String name;
+	private String holderName;
 	private String cardType; //visa or mastercard
 	
 	
 	
-	public Card(long number, String validThrough, String name, String cardType) {
+	public Card(String number, String validThrough, String name, String cardType) {
 		super();
 		this.number = number;
 		this.validThrough = validThrough;
-		this.name = name;
+		this.holderName = name;
 		this.cardType = cardType;
 	}
-	public Card(long number, int pin, String validThrough, String name,
+	public Card(String number, int pin, String validThrough, String name,
 			String cardType) {
 		super();
 		this.number = number;
 		this.pin = pin;
 		this.validThrough = validThrough;
-		this.name = name;
+		this.holderName = name;
 		this.cardType = cardType;
 	}
 	
@@ -43,14 +43,14 @@ public class Card implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	public long getNumber() {
+	public String getNumber() {
 		return number;
 	}
 	public String getValidThrough() {
 		return validThrough;
 	}
 	public String getName() {
-		return name;
+		return holderName;
 	}
 	public String getCardType() {
 		return cardType;
@@ -58,17 +58,18 @@ public class Card implements Serializable {
 	@Override
 	public String toString() {
 		return "Card [number=" + number + ", pin=" + pin + ", validThrough="
-				+ validThrough + ", name=" + name + ", cardType=" + cardType
+				+ validThrough + ", name=" + holderName + ", cardType=" + cardType
 				+ "]";
 	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result
 				+ ((cardType == null) ? 0 : cardType.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + (int) (number ^ (number >>> 32));
+		result = prime * result + ((holderName == null) ? 0 : holderName.hashCode());
+		result = prime * result + ((number == null) ? 0 : number.hashCode());
 		result = prime * result + pin;
 		result = prime * result
 				+ ((validThrough == null) ? 0 : validThrough.hashCode());
@@ -88,12 +89,15 @@ public class Card implements Serializable {
 				return false;
 		} else if (!cardType.equals(other.cardType))
 			return false;
-		if (name == null) {
-			if (other.name != null)
+		if (holderName == null) {
+			if (other.holderName != null)
 				return false;
-		} else if (!name.equals(other.name))
+		} else if (!holderName.equals(other.holderName))
 			return false;
-		if (number != other.number)
+		if (number == null) {
+			if (other.number != null)
+				return false;
+		} else if (!number.equals(other.number))
 			return false;
 		if (pin != other.pin)
 			return false;
