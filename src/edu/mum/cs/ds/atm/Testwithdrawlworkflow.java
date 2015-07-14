@@ -1,7 +1,9 @@
 package edu.mum.cs.ds.atm;
 
+import edu.mum.cs.ds.atm.command.WithdrawCommand;
 import edu.mum.cs.ds.atm.model.ATMMachine;
 import edu.mum.cs.ds.atm.model.Account;
+import edu.mum.cs.ds.atm.model.Request;
 
 public class Testwithdrawlworkflow {
 	/*
@@ -19,7 +21,11 @@ public class Testwithdrawlworkflow {
 		ATMMachine objMachine = new ATMMachine();
 	
 		Account objAccount = loadAccountInfo();
-	
+		Request objRequest = new Request(null, null, null, null);
+		WithdrawCommand objCommand = new WithdrawCommand(objRequest,new Reciever());
+
+		//Add these commands to the invoker
+		
 	}
 	
 	public Account loadAccountInfo()
