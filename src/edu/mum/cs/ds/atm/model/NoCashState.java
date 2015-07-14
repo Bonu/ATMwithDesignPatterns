@@ -2,7 +2,9 @@ package edu.mum.cs.ds.atm.model;
 
 public class NoCashState extends MachineState {
 
-	public NoCashState(){}
+	public NoCashState(ATMMachine machine){
+		this.machine = machine;
+	}
 	public NoCashState(MachineState state)
 	{
 		this.cashAvailable = state.cashAvailable;

@@ -4,7 +4,6 @@ import edu.mum.cs.ds.atm.model.ATMMachine;
 import edu.mum.cs.ds.atm.model.Account;
 
 public class Testwithdrawlworkflow {
-	
 	/*
 	 * 1. Check the state of the ATM Machine, if it is NotEnoughCash state we should not proceed.
 	 * 2. Check the state of the account, if it is red we should not proceed
@@ -21,10 +20,6 @@ public class Testwithdrawlworkflow {
 	
 		Account objAccount = loadAccountInfo();
 	
-		
-		
-	
-	
 	}
 	
 	public Account loadAccountInfo()
@@ -32,3 +27,4 @@ public class Testwithdrawlworkflow {
 		return new Account(0,null,0,null);
 	}
 }
+
