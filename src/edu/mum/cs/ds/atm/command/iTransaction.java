@@ -1,5 +1,5 @@
 package edu.mum.cs.ds.atm.command;
 
-public interface Transaction {
+public interface iTransaction {
 
 }

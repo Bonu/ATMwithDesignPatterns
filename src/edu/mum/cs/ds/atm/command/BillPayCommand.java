@@ -1,17 +1,16 @@
 package edu.mum.cs.ds.atm.command;
 
-import edu.mum.cs.ds.atm.model.Request;
 
 public class BillPayCommand implements UndoCommand {
 
 	@Override
-	public boolean execute(Request request) {
+	public boolean execute() {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean undo(Request request) {
+	public boolean undo() {
 		// TODO Auto-generated method stub
 		return false;
 	}
