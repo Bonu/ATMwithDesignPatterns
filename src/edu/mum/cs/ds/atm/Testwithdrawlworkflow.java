@@ -20,7 +20,6 @@ public class Testwithdrawlworkflow {
 		
 		ATMMachine objMachine = new ATMMachine();
 	
-		Account objAccount = loadAccountInfo();
 		Request objRequest = new Request(null, null, null, null);
 		WithdrawCommand objCommand = new WithdrawCommand(objRequest,new Reciever());
 
