@@ -65,8 +65,5 @@ public class Main {
 		account1.addCard(card2);
 		
 		
-		
-		
-		
 	}
 }
