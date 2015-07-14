@@ -6,6 +6,10 @@ public class FullCashState extends MachineState {
 	{
 		this.cashAvailable = state.cashAvailable;
 	}
+	public FullCashState(ATMMachine machine)
+	{
+		this.machine = machine;
+	}
 	@Override
 	public void Deposit(double amount) throws Exception {
 		  throw new Exception("Exceeding machine capacity");
