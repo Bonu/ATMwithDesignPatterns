@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import edu.mum.cs.ds.atm.base.Invoker;
+import edu.mum.cs.ds.atm.command.WithdrawCommand;
 import edu.mum.cs.ds.atm.model.ATMMachine;
 import edu.mum.cs.ds.atm.model.Account;
 import edu.mum.cs.ds.atm.model.Card;
@@ -40,9 +41,10 @@ public class Main {
         String pin = input1.next();
         
         Request withDrawRequest = new Request("withDraw", main.machine007.getId(),card,main.machine007.branchCode,2000.00);
-       
+        WithdrawCommand withdrawCommand = new WithdrawCommand(withDrawRequest);
         Invoker invoker = new Invoker();
-        invoker.addRequestToQueue(withDrawRequest);
+        invoker.addRequestToQueue(withdrawCommand);
+        
         
 	}
 
