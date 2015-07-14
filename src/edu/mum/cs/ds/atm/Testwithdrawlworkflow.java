@@ -1,6 +1,7 @@
 package edu.mum.cs.ds.atm;
 
 import edu.mum.cs.ds.atm.model.ATMMachine;
+import edu.mum.cs.ds.atm.model.Account;
 
 public class Testwithdrawlworkflow {
 	
@@ -13,9 +14,21 @@ public class Testwithdrawlworkflow {
 	 * 6. Print Reciept
 	*/
 
-	ATMMachine objMachine = new ATMMachine();
+	public void beginWorkFlow()
+	{
+		
+		ATMMachine objMachine = new ATMMachine();
+	
+		Account objAccount = loadAccountInfo();
+	
+		
+		
 	
 	
+	}
 	
-	
+	public Account loadAccountInfo()
+	{
+		return new Account(0,null,0,null);
+	}
 }
