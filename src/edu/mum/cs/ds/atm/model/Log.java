@@ -9,4 +9,11 @@ public class Log implements Serializable {
 	Error error;
 	ATMMachine mechine;
 	Date date;
+	public Log(Account account, Error error, ATMMachine mechine, Date date) {
+		super();
+		this.account = account;
+		this.error = error;
+		this.mechine = mechine;
+		this.date = date;
+	}
 }

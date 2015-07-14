@@ -18,5 +18,20 @@ public class Error implements Serializable {
 		this.errorDescription = errorDescription;
 		this.parent = parent;
 	}
+	public String getId() {
+		return Id;
+	}
+	public String getErrorType() {
+		return errorType;
+	}
+	public String getErrorCategory() {
+		return errorCategory;
+	}
+	public String getErrorDescription() {
+		return errorDescription;
+	}
+	public String getParent() {
+		return parent;
+	}
 	
 }
