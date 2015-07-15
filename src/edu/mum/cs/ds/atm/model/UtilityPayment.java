@@ -1,7 +1,5 @@
 package edu.mum.cs.ds.atm.model;
 
-import java.util.Date;
-
 public class UtilityPayment {
 
 	Bill utilityBill = new Bill(new Account("111111111", "Mahabub", 210.0, "S"),
