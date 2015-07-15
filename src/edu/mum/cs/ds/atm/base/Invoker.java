@@ -14,8 +14,7 @@ public class Invoker {
 		command.execute();
 	}
 	
-	public void undo()
-	{
+	public void undo() {
 		Command obj = commands.pop();
 		if(obj instanceof UndoCommand)
 			((UndoCommand)obj).undo();

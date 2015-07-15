@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Log implements Serializable {
 
-	long accountNumber;
+	String accountNumber;
 	String errorCode;
 	String parent;
 	String mechineId;

@@ -14,15 +14,17 @@ public class Card implements Serializable {
 	private String validThrough;
 	private String holderName;
 	private String cardType; //visa or mastercard
+	private String accountId;
 	
 	
 	
-	public Card(String number, String validThrough, String name, String cardType) {
+	public Card(String number, String validThrough, String name, String cardType, String accountId) {
 		super();
 		this.number = number;
 		this.validThrough = validThrough;
 		this.holderName = name;
 		this.cardType = cardType;
+		this.accountId = accountId;
 	}
 	public Card(String number, int pin, String validThrough, String name,
 			String cardType) {
@@ -55,24 +57,22 @@ public class Card implements Serializable {
 	public String getCardType() {
 		return cardType;
 	}
-	@Override
-	public String toString() {
-		return "Card [number=" + number + ", pin=" + pin + ", validThrough="
-				+ validThrough + ", name=" + holderName + ", cardType=" + cardType
-				+ "]";
+	public String getAccountId() {
+		return accountId;
 	}
-	
+	public void setAccountId(String accountId) {
+		this.accountId = accountId;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result
-				+ ((cardType == null) ? 0 : cardType.hashCode());
+		result = prime * result + ((accountId == null) ? 0 : accountId.hashCode());
+		result = prime * result + ((cardType == null) ? 0 : cardType.hashCode());
 		result = prime * result + ((holderName == null) ? 0 : holderName.hashCode());
 		result = prime * result + ((number == null) ? 0 : number.hashCode());
 		result = prime * result + pin;
-		result = prime * result
-				+ ((validThrough == null) ? 0 : validThrough.hashCode());
+		result = prime * result + ((validThrough == null) ? 0 : validThrough.hashCode());
 		return result;
 	}
 	@Override
@@ -84,6 +84,11 @@ public class Card implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Card other = (Card) obj;
+		if (accountId == null) {
+			if (other.accountId != null)
+				return false;
+		} else if (!accountId.equals(other.accountId))
+			return false;
 		if (cardType == null) {
 			if (other.cardType != null)
 				return false;
@@ -107,6 +112,11 @@ public class Card implements Serializable {
 		} else if (!validThrough.equals(other.validThrough))
 			return false;
 		return true;
+	}
+	@Override
+	public String toString() {
+		return "Card [number=" + number + ", pin=" + pin + ", validThrough=" + validThrough + ", holderName="
+				+ holderName + ", cardType=" + cardType + ", accountId=" + accountId + "]";
 	}
 	
 	
