@@ -3,8 +3,6 @@
  */
 package edu.mum.cs.ds.atm;
 
-import java.util.Scanner;
-
 import edu.mum.cs.ds.atm.base.Invoker;
 import edu.mum.cs.ds.atm.command.CheckBalanceCommand;
 import edu.mum.cs.ds.atm.command.WithdrawCommand;
@@ -48,6 +46,8 @@ public class Main {
         Request chechBalanceRequest = new Request("checkBalance", main.machine007.getId(),card,main.machine007.branchCode,2000.00,"111111111");
         CheckBalanceCommand checkBalanceCommand = new CheckBalanceCommand(chechBalanceRequest);
         invoker.addAndExecute(checkBalanceCommand);
+        
+        
         
         
 	}
