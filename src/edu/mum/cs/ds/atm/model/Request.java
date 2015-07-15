@@ -10,6 +10,7 @@ public class Request {
 	private String status;
 	private String message;
 	private String accountId;
+	private int pin = 0;
 	
 	
 	public Request(String actionType, String machineId, String cardNo,
@@ -35,6 +36,18 @@ public class Request {
 		System.out.println("----- "+actionType+" request is created -------");
 	}
 
+	public Request(String actionType, String machineId, String cardNo,
+			String branchCode, double amount, String accountId, int pin) {
+		super();
+		this.actionType = actionType;
+		this.machineId = machineId;
+		this.cardNo = cardNo;
+		this.branchCode = branchCode;
+		this.amount = amount;
+		this.accountId=accountId;
+		this.pin=pin;
+		System.out.println("----- "+actionType+" request is created -------");
+	}
 
 	public String getActionType() {
 		return actionType;
@@ -72,11 +85,13 @@ public class Request {
 		this.message = message;
 	}
 
-
 	public String getAccountId() {
 		return accountId;
 	}
 
+	public int getPin() {
+		return pin;
+	}
 
 	@Override
 	public int hashCode() {
@@ -94,7 +109,6 @@ public class Request {
 		result = prime * result + ((status == null) ? 0 : status.hashCode());
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -145,14 +159,11 @@ public class Request {
 		return true;
 	}
 
-
 	@Override
 	public String toString() {
 		return "Request [actionType=" + actionType + ", machineId=" + machineId + ", cardNo=" + cardNo + ", branchCode="
 				+ branchCode + ", amount=" + amount + ", status=" + status + ", message=" + message + ", accountId="
 				+ accountId + "]";
 	}
-	
-	
 	
 }
