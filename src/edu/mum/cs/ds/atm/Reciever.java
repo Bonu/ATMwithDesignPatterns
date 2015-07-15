@@ -22,5 +22,10 @@ public class Reciever {
 		return true;
 		 //TODO:: code here which connects to db/service
 	}
+	
+	public double checkBalanceAction(Request request){
+		String accountId = request.getAccountId();
+		return objAccountHelper.checkBalanace(accountId);
+	}
 
 }

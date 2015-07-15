@@ -20,15 +20,10 @@ public class Testwithdrawlworkflow {
 	{
 		
 		ATMMachine objMachine = new ATMMachine();
-	
-		Request objRequest = new Request(null, null, null, null);
-		
+		Request objRequest = new Request(null, null, null, null,"");
 		WithdrawCommand objCommand = new WithdrawCommand(objRequest);
-		
 		Invoker objInvoker = new Invoker();
-		
 		objInvoker.addAndExecute(objCommand);
-		
 
 		//Add these commands to the invoker
 		
@@ -36,7 +31,7 @@ public class Testwithdrawlworkflow {
 	
 	public Account loadAccountInfo()
 	{
-		return new Account(0,null,0,null);
+		return new Account("",null,0,null);
 	}
 }
 

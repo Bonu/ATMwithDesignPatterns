@@ -1,21 +1,28 @@
 package edu.mum.cs.ds.atm.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Account implements Serializable {
+
+	@Override
+	public String toString() {
+		return "Account [accountNumber=" + accountNumber + ", AccountHolderName=" + AccountHolderName + ", amount="
+				+ amount + ", accountType=" + accountType + ", cards=" + cards + "]";
+	}
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -1045564167693885884L;
-	private long accountNumber;
+	private String accountNumber;
 	private String AccountHolderName;
 	private double amount;
 	private String accountType; // current or savings
-	private List<Card> cards;
+	private List<Card> cards = new ArrayList<Card>();
 	
-	public Account(long accountNumber, String accountHolderName, double amount,
+	public Account(String accountNumber, String accountHolderName, double amount,
 			String accountType, List<Card> cards) {
 		super();
 		this.accountNumber = accountNumber;
@@ -25,7 +32,7 @@ public class Account implements Serializable {
 		this.cards = cards;
 	}
 	
-	public Account(long accountNumber, String accountHolderName, double amount,
+	public Account(String accountNumber, String accountHolderName, double amount,
 			String accountType) {
 		super();
 		this.accountNumber = accountNumber;
@@ -51,7 +58,7 @@ public class Account implements Serializable {
 		this.cards = cards;
 	}
 
-	public long getAccountNumber() {
+	public String getAccountNumber() {
 		return accountNumber;
 	}
 
