@@ -8,12 +8,12 @@ public class Bill implements Serializable {
 	public double paymentAmount;
 	public String date;
 	public String billNo;
-	public Bill(Account account, double paymentAmount, String date, String billNo) {
+	
+	public Bill(Account account, double paymentAmount, String date) {
 		super();
 		this.account = account;
 		this.paymentAmount = paymentAmount;
 		this.date = date;
-		this.billNo = billNo;
 	}
 	public Account getAccount() {
 		return account;
