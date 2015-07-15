@@ -7,17 +7,19 @@ import edu.mum.cs.ds.atm.model.Request;
 public class WithdrawCommand implements UndoCommand {
 
 	private Request request;
-	private Reciever objReciever = new Reciever();
+	private Reciever receiver;
 	
 	public WithdrawCommand(Request request){
-		this.request=request; 
+		this.request=request;
+		receiver = new Reciever();
 	}
+	
 	public boolean execute() {
-		return objReciever.withdrawl(request);
+		return receiver.withdrawl(request);
 	}
 
 	public boolean undo() {
-		 return objReciever.undowithdrawl(request);
+		 return receiver.undowithdrawl(request);
 	}
 
 }
