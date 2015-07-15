@@ -1,6 +1,9 @@
-package edu.mum.cs.ds.atm.model;
+package edu.mum.cs.ds.atm;
 
 import java.io.Serializable;
+
+import edu.mum.cs.ds.atm.model.state.MachineState;
+import edu.mum.cs.ds.atm.model.state.NoCashState;
 
 public class ATMMachine implements Serializable {
  
@@ -22,12 +25,12 @@ public class ATMMachine implements Serializable {
 	
 	public void loadCash(double amount) throws Exception
 	{
-		_machineState.Deposit(amount);
+		_machineState.deposit(amount);
 	}
 	
 	public void drawCash(double amount) throws Exception
 	{
-		_machineState.Withdraw(amount);
+		_machineState.withdraw(amount);
 	}
 	
 	public void setState(MachineState stateOfMachie)

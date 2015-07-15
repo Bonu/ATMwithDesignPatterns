@@ -2,6 +2,7 @@ package edu.mum.cs.ds.atm.command;
 
 import edu.mum.cs.ds.atm.Reciever;
 import edu.mum.cs.ds.atm.model.Request;
+import edu.mum.cs.ds.atm.model.Response;
 
 public class CheckBalanceCommand implements Command {
 
@@ -13,9 +14,8 @@ public class CheckBalanceCommand implements Command {
 		receiver = new Reciever();
 	}
 	
-	public boolean execute() {
-		receiver.checkBalanceAction(request);
-		return false;
+	public Response execute() {
+		return receiver.checkBalanceAction(request);
 	}
 	
 	

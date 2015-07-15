@@ -1,6 +1,6 @@
-package edu.mum.cs.ds.atm.model;
+package edu.mum.cs.ds.atm.adaptor;
 
-import java.util.Date;
+import edu.mum.cs.ds.atm.model.Bill;
 
 public abstract class BillPayment {
 	protected Bill bill;

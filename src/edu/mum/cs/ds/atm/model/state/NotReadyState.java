@@ -1,4 +1,7 @@
-package edu.mum.cs.ds.atm.model;
+package edu.mum.cs.ds.atm.model.state;
+
+import edu.mum.cs.ds.atm.ATMMachine;
+
 
 public class NotReadyState extends MachineState {
 
@@ -17,14 +20,14 @@ public class NotReadyState extends MachineState {
 		else if(this.cashAvailable == this.cashCapacity)
 			currentMachineState = new FullCashState(this.machine);
 		else
-			currentMachineState = new NormalState(this.machine);
+			currentMachineState = new CashAvailable(this.machine);
 	}
 	@Override
-	public void Deposit(double amount) throws Exception {
+	public void deposit(double amount) throws Exception {
 		  throw new Exception("Machine failure, not ready for operations");
 	}
 	@Override
-	public void Withdraw(double amount) throws Exception {
+	public void withdraw(double amount) throws Exception {
 			  throw new Exception("Machine failure, not ready for operations");
 	}
 	

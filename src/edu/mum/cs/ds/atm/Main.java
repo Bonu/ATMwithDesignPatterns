@@ -1,19 +1,14 @@
-/**
- * 
- */
 package edu.mum.cs.ds.atm;
 
 import edu.mum.cs.ds.atm.base.Invoker;
 import edu.mum.cs.ds.atm.command.CheckBalanceCommand;
 import edu.mum.cs.ds.atm.command.WithdrawCommand;
-import edu.mum.cs.ds.atm.model.ATMMachine;
 import edu.mum.cs.ds.atm.model.Account;
 import edu.mum.cs.ds.atm.model.Card;
 import edu.mum.cs.ds.atm.model.Request;
 
 /**
  * @author janardhanbonu
- *
  */
 public class Main {
 	
@@ -47,6 +42,16 @@ public class Main {
         CheckBalanceCommand checkBalanceCommand = new CheckBalanceCommand(chechBalanceRequest);
         invoker.addAndExecute(checkBalanceCommand);
         
+	}
+	
+	public void preLoadATM(){
+		ATMMachine atmMachine = new ATMMachine();
+		try {
+			atmMachine.loadCash(10000000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void loadData(){

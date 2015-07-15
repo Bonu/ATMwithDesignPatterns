@@ -1,17 +1,19 @@
-package edu.mum.cs.ds.atm.model;
+package edu.mum.cs.ds.atm.model.state;
 
-public class NormalState extends MachineState {
+import edu.mum.cs.ds.atm.ATMMachine;
 
-	public NormalState(MachineState state)
+public class CashAvailable extends MachineState {
+
+	public CashAvailable(MachineState state)
 	{
 		this.cashAvailable = state.cashAvailable;
 	}
-	public NormalState(ATMMachine machine)
+	public CashAvailable(ATMMachine machine)
 	{
 		this.machine = machine;
 	}
 	@Override
-	public void Deposit(double amount) throws Exception {
+	public void deposit(double amount) throws Exception {
 		if(cashAvailable+amount == cashCapacity)
 		{
 			cashAvailable +=amount;
@@ -25,7 +27,7 @@ public class NormalState extends MachineState {
 	}
 
 	@Override
-	public void Withdraw(double amount) throws Exception {
+	public void withdraw(double amount) throws Exception {
 		try {
 			if(cashAvailable-amount == 0 ) 
 			{

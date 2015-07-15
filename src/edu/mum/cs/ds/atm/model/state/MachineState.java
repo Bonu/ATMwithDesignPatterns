@@ -1,4 +1,7 @@
-package edu.mum.cs.ds.atm.model;
+package edu.mum.cs.ds.atm.model.state;
+
+import edu.mum.cs.ds.atm.ATMMachine;
+
 
 public abstract class MachineState {
 	
@@ -7,7 +10,7 @@ public abstract class MachineState {
 	
 	 	protected ATMMachine machine;
 	 	protected double balance;
-	 	public abstract void Deposit(double amount) throws Exception;
-	    public abstract void Withdraw(double amount) throws Exception;
+	 	public abstract void deposit(double amount) throws Exception;
+	    public abstract void withdraw(double amount) throws Exception;
 	    
 }

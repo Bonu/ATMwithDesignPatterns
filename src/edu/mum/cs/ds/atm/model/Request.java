@@ -11,6 +11,11 @@ public class Request {
 	private String message;
 	private String accountId;
 	private int pin = 0;
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+
+	private String billId;
 	
 	
 	public Request(String actionType, String machineId, String cardNo,
@@ -46,6 +51,20 @@ public class Request {
 		this.amount = amount;
 		this.accountId=accountId;
 		this.pin=pin;
+		System.out.println("----- "+actionType+" request is created -------");
+	}
+	
+	public Request(String actionType, String machineId, String cardNo,
+			String branchCode, double amount, String accountId, int pin, String billId) {
+		super();
+		this.actionType = actionType;
+		this.machineId = machineId;
+		this.cardNo = cardNo;
+		this.branchCode = branchCode;
+		this.amount = amount;
+		this.accountId=accountId;
+		this.pin=pin;
+		this.billId=billId;
 		System.out.println("----- "+actionType+" request is created -------");
 	}
 
@@ -92,6 +111,17 @@ public class Request {
 	public int getPin() {
 		return pin;
 	}
+
+	
+	public void setPin(int pin) {
+		this.pin = pin;
+	}
+
+
+	public String getBillId() {
+		return billId;
+	}
+
 
 	@Override
 	public int hashCode() {

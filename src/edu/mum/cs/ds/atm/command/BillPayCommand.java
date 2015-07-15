@@ -2,6 +2,7 @@ package edu.mum.cs.ds.atm.command;
 
 import edu.mum.cs.ds.atm.Reciever;
 import edu.mum.cs.ds.atm.model.Request;
+import edu.mum.cs.ds.atm.model.Response;
 
 public class BillPayCommand implements UndoCommand {
 
@@ -12,13 +13,12 @@ public class BillPayCommand implements UndoCommand {
 		this.request=request;
 		receiver = new Reciever();
 	}
-	public boolean execute() {
-		return receiver.payBill(request);
+	public Response execute() {
+		return receiver.payBillAndDeductAmout(request);
 	}
 
-	public boolean undo() {
-		// TODO Auto-generated method stub
-		return false;
+	public Response undo() {
+		return new Response();
 	}
 
 }

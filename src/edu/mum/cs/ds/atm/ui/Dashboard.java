@@ -1,24 +1,17 @@
 package edu.mum.cs.ds.atm.ui;
 
 import java.awt.EventQueue;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.awt.Panel;
+import java.awt.SystemColor;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JSplitPane;
-import javax.swing.JButton;
-import javax.swing.JInternalFrame;
 import javax.swing.JTable;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import java.awt.Button;
-import java.awt.Panel;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
-import java.awt.SystemColor;
 
 public class Dashboard {
 

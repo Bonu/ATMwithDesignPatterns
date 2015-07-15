@@ -1,4 +1,6 @@
-package edu.mum.cs.ds.atm.model;
+package edu.mum.cs.ds.atm.model.state;
+
+import edu.mum.cs.ds.atm.ATMMachine;
 
 public class FullCashState extends MachineState {
 
@@ -11,12 +13,12 @@ public class FullCashState extends MachineState {
 		this.machine = machine;
 	}
 	@Override
-	public void Deposit(double amount) throws Exception {
+	public void deposit(double amount) throws Exception {
 		  throw new Exception("Exceeding machine capacity");
 	}
 
 	@Override
-	public void Withdraw(double amount) throws Exception {
+	public void withdraw(double amount) throws Exception {
 		try {
 			
 			if(cashAvailable-amount == 0 )

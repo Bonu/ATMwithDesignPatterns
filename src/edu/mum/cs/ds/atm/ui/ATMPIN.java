@@ -1,12 +1,11 @@
 package edu.mum.cs.ds.atm.ui;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import javax.swing.BoxLayout;
 
 public class ATMPIN {
 
