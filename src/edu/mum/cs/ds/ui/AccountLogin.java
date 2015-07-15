@@ -15,12 +15,12 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class AccountLogin extends JFrame implements ActionListener{
-	private static final int FRAME_WIDTH = 600;
-	private static final int FRAME_HEIGHT = 230;
+	private static final int FRAME_WIDTH = 800;
+	private static final int FRAME_HEIGHT = 550;
 	private static final int FRAME_X_ORIGIN = 150;
 	private static final int FRAME_Y_ORIGIN = 250;
-	private static final int BUTTON_WIDTH = 80;
-	private static final int BUTTON_HEIGHT = 30;
+	private static final int BUTTON_WIDTH = 20;
+	private static final int BUTTON_HEIGHT = 15;
 	private JButton loginButton, resetButton;
 	GridLayout grid = new GridLayout(2, 2, 10, 10);
 	
@@ -46,6 +46,7 @@ public class AccountLogin extends JFrame implements ActionListener{
         setLocation  ( FRAME_X_ORIGIN, FRAME_Y_ORIGIN );
         
         
+        contentPane = getContentPane( );
         contentPane.setLayout( grid );
         contentPane.setBackground( Color.GRAY );
 
@@ -54,20 +55,20 @@ public class AccountLogin extends JFrame implements ActionListener{
         //contentPane.setBackground( Color.white );
         
         JPanel jp = new JPanel();
-        jp = getJPanelH(ACCOUNTNUMBER,10,10);
+        jp = getJPanel(ACCOUNTNUMBER,10,10);
         contentPane.add(jp);
         
-        jp = getJPanelH(PINNUMBER,10,10);
+        jp = getJPanel(PINNUMBER,10,10);
         contentPane.add(jp);
         
         loginButton = new JButton("SUBMIT");
 
-        loginButton.setBounds(10, 100, BUTTON_WIDTH,  BUTTON_HEIGHT);
+        loginButton.setBounds(10, 12, BUTTON_WIDTH,  BUTTON_HEIGHT);
         contentPane.add(loginButton);
         
         resetButton = new JButton("RESET");
 
-        resetButton.setBounds(60, 100, BUTTON_WIDTH,  BUTTON_HEIGHT);
+        resetButton.setBounds(60, 20, BUTTON_WIDTH,  BUTTON_HEIGHT);
         contentPane.add(resetButton);
        
         /*jTextFields[ACCOUNTNUMBER].addActionListener(new mailHandler());
