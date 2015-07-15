@@ -9,13 +9,13 @@ public class Account implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -1045564167693885884L;
-	private int accountNumber;
+	private long accountNumber;
 	private String AccountHolderName;
 	private double amount;
 	private String accountType; // current or savings
 	private List<Card> cards;
 	
-	public Account(int accountNumber, String accountHolderName, double amount,
+	public Account(long accountNumber, String accountHolderName, double amount,
 			String accountType, List<Card> cards) {
 		super();
 		this.accountNumber = accountNumber;
@@ -24,6 +24,16 @@ public class Account implements Serializable {
 		this.accountType = accountType;
 		this.cards = cards;
 	}
+	
+	public Account(long accountNumber, String accountHolderName, double amount,
+			String accountType) {
+		super();
+		this.accountNumber = accountNumber;
+		AccountHolderName = accountHolderName;
+		this.amount = amount;
+		this.accountType = accountType;
+	}
+	
 	
 	public double getAmount() {
 		return amount;
@@ -41,7 +51,7 @@ public class Account implements Serializable {
 		this.cards = cards;
 	}
 
-	public int getAccountNumber() {
+	public long getAccountNumber() {
 		return accountNumber;
 	}
 
@@ -53,13 +63,8 @@ public class Account implements Serializable {
 		return accountType;
 	}
 
-	public Account(int accountNumber, String accountHolderName, double amount,
-			String accountType) {
-		super();
-		this.accountNumber = accountNumber;
-		AccountHolderName = accountHolderName;
-		this.amount = amount;
-		this.accountType = accountType;
+	public void addCard(Card card){
+		cards.add(card);
 	}
 	
 	

@@ -1,9 +1,12 @@
 package edu.mum.cs.ds.atm;
 
+import edu.mum.cs.ds.atm.base.Invoker;
+import edu.mum.cs.ds.atm.command.WithdrawCommand;
 import edu.mum.cs.ds.atm.model.ATMMachine;
+import edu.mum.cs.ds.atm.model.Account;
+import edu.mum.cs.ds.atm.model.Request;
 
 public class Testwithdrawlworkflow {
-	
 	/*
 	 * 1. Check the state of the ATM Machine, if it is NotEnoughCash state we should not proceed.
 	 * 2. Check the state of the account, if it is red we should not proceed
@@ -13,9 +16,27 @@ public class Testwithdrawlworkflow {
 	 * 6. Print Reciept
 	*/
 
-	ATMMachine objMachine = new ATMMachine();
+	public void beginWorkFlow()
+	{
+		
+		ATMMachine objMachine = new ATMMachine();
 	
+		Request objRequest = new Request(null, null, null, null);
+		
+		WithdrawCommand objCommand = new WithdrawCommand(objRequest);
+		
+		Invoker objInvoker = new Invoker();
+		
+		objInvoker.addAndExecute(objCommand);
+		
+
+		//Add these commands to the invoker
+		
+	}
 	
-	
-	
+	public Account loadAccountInfo()
+	{
+		return new Account(0,null,0,null);
+	}
 }
+

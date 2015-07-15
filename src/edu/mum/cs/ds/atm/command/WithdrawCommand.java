@@ -1,19 +1,23 @@
 package edu.mum.cs.ds.atm.command;
 
+import edu.mum.cs.ds.atm.Reciever;
 import edu.mum.cs.ds.atm.model.Request;
+
 
 public class WithdrawCommand implements UndoCommand {
 
-	@Override
-	public boolean execute(Request request) {
-		// TODO Auto-generated method stub
-		return false;
+	private Request request;
+	private Reciever objReciever = new Reciever();
+	
+	public WithdrawCommand(Request request){
+		this.request=request; 
+	}
+	public boolean execute() {
+		return objReciever.withdrawl(request);
 	}
 
-	@Override
-	public boolean undo(Request request) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean undo() {
+		 return objReciever.undowithdrawl(request);
 	}
 
 }

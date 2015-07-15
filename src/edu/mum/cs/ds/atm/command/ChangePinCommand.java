@@ -2,16 +2,20 @@ package edu.mum.cs.ds.atm.command;
 
 import edu.mum.cs.ds.atm.model.Request;
 
+
 public class ChangePinCommand implements UndoCommand {
 
-	@Override
-	public boolean execute(Request request) {
+	private Request request;
+	
+	public ChangePinCommand(){
+		this.request=request;
+	}
+	public boolean execute() {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
-	public boolean undo(Request request) {
+	public boolean undo() {
 		// TODO Auto-generated method stub
 		return false;
 	}
