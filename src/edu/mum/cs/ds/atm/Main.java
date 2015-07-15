@@ -51,7 +51,7 @@ public class Main {
 
 	public void loadData(){
 		
-		machine007 = new ATMMachine("Fairfield", "IOWA-FAIRFIELD-007","IOWA-FAIRLFILED-007-SQUARE");
+		machine007 = ATMMachine.getInstance("Fairfield", "IOWA-FAIRFIELD-007","IOWA-FAIRLFILED-007-SQUARE");
 		Card card1 = new Card("1111111111234567","06/2090","Robert Bosch","MasterCard","1111111111");
 		card1.setPin(1234);
 		Card card2 = new Card("1111111111237253","06/2080","Robert Bosch","Visa","111111111");

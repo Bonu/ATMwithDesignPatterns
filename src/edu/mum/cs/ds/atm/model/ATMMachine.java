@@ -8,18 +8,27 @@ public class ATMMachine implements Serializable {
 	public String Id;
 	public String branchCode;
 	private MachineState _machineState;
-	
-	public ATMMachine()
+	private static ATMMachine instance;
+	private ATMMachine()
 	{
 		_machineState = new NoCashState(this);
 	}
-	public ATMMachine(String location, String id, String branchCode) {
+	private ATMMachine(String location, String id, String branchCode) {
 		super();
 		this.location = location;
 		Id = id;
 		this.branchCode = branchCode;
+		_machineState = new NoCashState(this);
 	}
-	
+	public static ATMMachine getInstance(String location, String id, String branchCode) {
+		//Singleton implementation, only one instance should exist at any point.
+		if(instance == null)
+		{
+			return new ATMMachine(location, id, branchCode);
+		}
+		else
+			return instance;
+	}
 	public void loadCash(double amount) throws Exception
 	{
 		_machineState.Deposit(amount);
