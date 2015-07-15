@@ -10,13 +10,11 @@ public class AcceptPaymentCommand implements UndoCommand {
 	public AcceptPaymentCommand(){
 		this.request=request;
 	}
-	@Override
 	public boolean execute() {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
 	public boolean undo() {
 		// TODO Auto-generated method stub
 		return false;

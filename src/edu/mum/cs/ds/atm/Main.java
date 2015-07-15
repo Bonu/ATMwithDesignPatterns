@@ -43,7 +43,7 @@ public class Main {
         Request withDrawRequest = new Request("withDraw", main.machine007.getId(),card,main.machine007.branchCode,2000.00);
         WithdrawCommand withdrawCommand = new WithdrawCommand(withDrawRequest);
         Invoker invoker = new Invoker();
-        invoker.addRequestToQueue(withdrawCommand);
+        invoker.addAndExecute(withdrawCommand);
         
         
 	}
