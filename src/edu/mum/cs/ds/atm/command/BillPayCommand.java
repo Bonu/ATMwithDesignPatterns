@@ -13,7 +13,7 @@ public class BillPayCommand implements UndoCommand {
 		receiver = new Reciever();
 	}
 	public boolean execute() {
-		receiver.payBill(request);
+		return receiver.payBill(request);
 	}
 
 	public boolean undo() {

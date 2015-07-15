@@ -16,7 +16,13 @@ public class Reciever {
 	}
 	public boolean withdrawl(Request objData)
 	{
-		return objAccountHelper.withdrawl(objData);
+		if(objAccountHelper.withdrawl(objData)){
+			CashDispenseChain cashDispense = new CashDispenseChain();
+			return cashDispense.dispenseCash(objData.getAmount());
+		}else{
+			return false;
+		}
+		
 		 //TODO:: code here which connects to db/service
 	}
 	public boolean undowithdrawl(Request objData)
@@ -44,7 +50,8 @@ public class Reciever {
 	}
 	
 	public boolean payBill(Request request){
-		String accountId = request.
+//		String accountId = request. 
+		return false;
 	}
 
 }

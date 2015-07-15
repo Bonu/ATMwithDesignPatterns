@@ -47,9 +47,6 @@ public class Main {
         CheckBalanceCommand checkBalanceCommand = new CheckBalanceCommand(chechBalanceRequest);
         invoker.addAndExecute(checkBalanceCommand);
         
-        
-        
-        
 	}
 
 	public void loadData(){
