@@ -1,6 +1,6 @@
 package edu.mum.cs.ds.atm.model.state;
 
-import edu.mum.cs.ds.atm.ATMMachine;
+import edu.mum.cs.ds.atm.model.ATMMachine;
 
 
 public class NotReadyState extends MachineState {
