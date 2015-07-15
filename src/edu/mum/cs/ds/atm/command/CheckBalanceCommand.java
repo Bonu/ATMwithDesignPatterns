@@ -9,7 +9,6 @@ public class CheckBalanceCommand implements Command {
 	public CheckBalanceCommand(Request request){
 		this.request = request;
 	}
-	@Override
 	public boolean execute() {
 
 		
