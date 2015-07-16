@@ -19,7 +19,7 @@ public class Testwithdrawlworkflow {
 	public void beginWorkFlow()
 	{
 		
-		ATMMachine objMachine = new ATMMachine();
+		ATMMachine objMachine = ATMMachine.getInstance(null,null,null); 
 		Request objRequest = new Request(null, null, null, null,"");
 		WithdrawCommand objCommand = new WithdrawCommand(objRequest);
 		Invoker objInvoker = new Invoker();

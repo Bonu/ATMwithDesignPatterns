@@ -20,7 +20,7 @@ public class AccountImplementor {
 		return true;
 	}
 
-	public boolean withdrawl(Request objData) {
+	public boolean withdraw(String accountId, double deductAmount) {
 		return true;
 	}
 	

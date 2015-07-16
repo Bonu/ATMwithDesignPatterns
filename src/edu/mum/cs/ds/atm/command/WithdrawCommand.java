@@ -2,6 +2,7 @@ package edu.mum.cs.ds.atm.command;
 
 import edu.mum.cs.ds.atm.Reciever;
 import edu.mum.cs.ds.atm.model.Request;
+import edu.mum.cs.ds.atm.model.Response;
 
 
 public class WithdrawCommand implements UndoCommand {
@@ -14,11 +15,11 @@ public class WithdrawCommand implements UndoCommand {
 		receiver = new Reciever();
 	}
 	
-	public boolean execute() {
+	public Response execute() {
 		return receiver.withdrawl(request);
 	}
 
-	public boolean undo() {
+	public Response undo() {
 		 return receiver.undowithdrawl(request);
 	}
 

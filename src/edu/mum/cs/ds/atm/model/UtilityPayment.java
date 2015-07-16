@@ -1,6 +1,5 @@
 package edu.mum.cs.ds.atm.model;
 
-import java.util.Date;
 
 public class UtilityPayment {
 

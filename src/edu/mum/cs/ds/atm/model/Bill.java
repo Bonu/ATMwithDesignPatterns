@@ -1,7 +1,6 @@
 package edu.mum.cs.ds.atm.model;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class Bill implements Serializable {
 	public Account account;
@@ -9,11 +8,12 @@ public class Bill implements Serializable {
 	public String date;
 	public String billNo;
 	
-	public Bill(Account account, double paymentAmount, String date) {
+	public Bill(Account account, double paymentAmount, String date, String billNo) {
 		super();
 		this.account = account;
 		this.paymentAmount = paymentAmount;
 		this.date = date;
+		this.billNo = billNo;
 	}
 	public Account getAccount() {
 		return account;

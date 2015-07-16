@@ -1,7 +1,6 @@
 package edu.mum.cs.ds.atm.db;
 
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class CreateTables {
 

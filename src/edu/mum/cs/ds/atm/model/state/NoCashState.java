@@ -1,4 +1,7 @@
-package edu.mum.cs.ds.atm.model;
+package edu.mum.cs.ds.atm.model.state;
+
+import edu.mum.cs.ds.atm.model.ATMMachine;
+
 
 public class NoCashState extends MachineState {
 
@@ -10,17 +13,17 @@ public class NoCashState extends MachineState {
 		this.cashAvailable = state.cashAvailable;
 	}
 	@Override
-	public void Deposit(double amount) throws Exception {
+	public void deposit(double amount) throws Exception {
 		if(cashAvailable< cashCapacity ) {
 			cashAvailable +=amount;
-			this.machine.setState(new NormalState(this));
+			this.machine.setState(new CashAvailable(this));
 		}
 		else
 			throw new Exception("Exceeding machine capacity");
 	}
 
 	@Override
-	public void Withdraw(double amount) throws Exception {
+	public void withdraw(double amount) throws Exception {
 		try {
 			  throw new Exception("Not allowed.....No Sufficient funds");
 		} catch (Exception e) {
