@@ -1,0 +1,6 @@
+Jul 16, 2015 10:01:37 AM edu.mum.cs.ds.atm.RequestHandlerFacade loadData
+SEVERE: Add execute invoked
+Jul 16, 2015 10:01:37 AM edu.mum.cs.ds.atm.base.Invoker addAndExecute
+INFO: Added to stack and execute command
+Jul 16, 2015 10:01:37 AM edu.mum.cs.ds.atm.RequestHandlerFacade handleRequest
+INFO: Response [request=Request [actionType=checkBalance, machineId=MachineId, cardNo=1234534232243, branchCode=fairfield-branch, amount=11000.0, status=null, message=null, accountId=111111111], isRequestSuccess=true, message=Transaction check balance success]
