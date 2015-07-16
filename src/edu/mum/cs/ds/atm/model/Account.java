@@ -16,27 +16,38 @@ public class Account implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -1045564167693885884L;
+	public String getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(String customerId) {
+		this.customerId = customerId;
+	}
+
 	private String accountNumber;
 	private String AccountHolderName;
 	private double amount;
 	private String accountType; // current or savings
+	private String customerId;
 	private List<Card> cards = new ArrayList<Card>();
 	
-	public Account(String accountNumber, String accountHolderName, double amount,
+	public Account(String customerId, String accountNumber, String accountHolderName, double amount,
 			String accountType, List<Card> cards) {
 		super();
+		this.customerId=customerId;
 		this.accountNumber = accountNumber;
-		AccountHolderName = accountHolderName;
+		this.AccountHolderName = accountHolderName;
 		this.amount = amount;
 		this.accountType = accountType;
 		this.cards = cards;
 	}
 	
-	public Account(String accountNumber, String accountHolderName, double amount,
+	public Account(String customerId, String accountNumber, String accountHolderName, double amount,
 			String accountType) {
 		super();
+		this.customerId=customerId;
 		this.accountNumber = accountNumber;
-		AccountHolderName = accountHolderName;
+		this.AccountHolderName = accountHolderName;
 		this.amount = amount;
 		this.accountType = accountType;
 	}
