@@ -8,12 +8,10 @@ import edu.mum.cs.ds.atm.command.UndoCommand;
 
 public class Invoker {
 	SingletonLogger  loggerWrapper = SingletonLogger.getInstance();
-	
-	
 	Stack<Command> commands = new Stack<Command>();
 
 	public void addAndExecute(Command command) {
-		SingletonLogger.myLogger.log(Level.SEVERE, "Add execute invoked");
+		loggerWrapper.myLogger.log(Level.INFO, "This is the new message");
 		commands.add(command);
 		command.execute();
 	}

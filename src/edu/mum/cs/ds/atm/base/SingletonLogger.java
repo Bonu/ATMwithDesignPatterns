@@ -1,5 +1,7 @@
 package edu.mum.cs.ds.atm.base;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,8 +20,11 @@ public class SingletonLogger {
 	}
 
 	private static void prepareLogger() {
+		Date date = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("MMddYYYYHHmm");
+		String sDate = sdf.format(date);
 		try {
-			FileHandler myFileHandler = new FileHandler("/logfiel/myLogFile.log", true);
+			FileHandler myFileHandler = new FileHandler("myLogFile"+sDate+".log", true);
 			myFileHandler.setFormatter(new SimpleFormatter());
 			myLogger.addHandler(myFileHandler);
 			myLogger.setUseParentHandlers(false);
@@ -27,5 +32,9 @@ public class SingletonLogger {
 		} catch (Exception e) {
 			// ...
 		}
+	}
+	
+	public void setMessage(String message){
+		myLogger.info(message);
 	}
 }

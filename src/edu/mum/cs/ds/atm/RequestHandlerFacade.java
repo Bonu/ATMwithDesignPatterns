@@ -1,6 +1,9 @@
 package edu.mum.cs.ds.atm;
 
+import java.util.logging.Level;
+
 import edu.mum.cs.ds.atm.base.Invoker;
+import edu.mum.cs.ds.atm.base.SingletonLogger;
 import edu.mum.cs.ds.atm.command.CheckBalanceCommand;
 import edu.mum.cs.ds.atm.command.WithdrawCommand;
 import edu.mum.cs.ds.atm.model.ATMMachine;
@@ -11,20 +14,21 @@ import edu.mum.cs.ds.atm.model.Request;
 /**
  * @author janardhanbonu
  */
-public class Main {
+public class RequestHandlerFacade {
 	
 	Account account1;
 	
 	public ATMMachine machine007=null;
+	SingletonLogger  loggerWrapper = SingletonLogger.getInstance();
 	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 
-		Main main  = new Main();
+		RequestHandlerFacade main  = new RequestHandlerFacade();
 		main.loadData();
-		
+		SingletonLogger.myLogger.log(Level.SEVERE, "Add execute invoked");
 //	    System.out.println("Enter card number");
 //        Scanner input = new Scanner(System.in);
 //        String card = input.next();
@@ -45,6 +49,11 @@ public class Main {
         
 	}
 	
+	
+	public void handleRequest(Request request){
+		
+	}
+	
 	public void preLoadATM(){
 		ATMMachine atmMachine = ATMMachine.getInstance("location", "Fairfield-Argiro-007", "Fairfield-square");
 		try {
@@ -56,7 +65,7 @@ public class Main {
 	}
 
 	public void loadData(){
-		
+		SingletonLogger.myLogger.log(Level.SEVERE, "Add execute invoked");
 		machine007 = ATMMachine.getInstance("Fairfield", "IOWA-FAIRFIELD-007","IOWA-FAIRLFILED-007-SQUARE");
 		Card card1 = new Card("1111111111234567","06/2090","Robert Bosch","MasterCard","1111111111");
 		card1.setPin(1234);
@@ -66,7 +75,6 @@ public class Main {
 		account1 = new Account("2532124254", "Robert Bossh", 50000, "Current");
 		account1.addCard(card1);
 		account1.addCard(card2);
-		
-		
+
 	}
 }

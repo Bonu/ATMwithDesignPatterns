@@ -60,8 +60,8 @@ public class Reciever {
 		request.setAmount(objAccountHelper.checkBalanace(accountId));
 		response.setRequestSuccess(true);
 		response.setMessage("Transaction check balance success");
-		response.getRequest().setPin(0);
 		response.setRequest(request);
+		response.getRequest().setPin(0);
 		return response;
 	}
 
