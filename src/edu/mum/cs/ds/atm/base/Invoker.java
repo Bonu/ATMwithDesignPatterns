@@ -12,14 +12,8 @@ public class Invoker {
 	SingletonLogger  SMSLoader = SingletonLogger.getInstance();
 	Stack<Command> commands = new Stack<Command>();
 
-<<<<<<< HEAD
-	public void addAndExecute(Command command) {
-		loggerWrapper.myLogger.log(Level.INFO, "This is the new message");
-		
-=======
 	public Response addAndExecute(UndoCommand command) {
 		loggerWrapper.myLogger.log(Level.INFO, "Added to stack and execute command");
->>>>>>> branch 'master' of https://github.com/Bonu/ATMwithDesignPatterns
 		commands.add(command);
 		return command.execute();
 	}
