@@ -8,6 +8,8 @@ import javax.swing.JButton;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Keyboard {
 
@@ -52,75 +54,75 @@ public class Keyboard {
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		frame.getContentPane().setLayout(gridBagLayout);
 		
-		JButton button = new JButton("1");
-		GridBagConstraints gbc_button = new GridBagConstraints();
-		gbc_button.insets = new Insets(0, 0, 5, 5);
-		gbc_button.gridx = 3;
-		gbc_button.gridy = 2;
-		frame.getContentPane().add(button, gbc_button);
+		JButton btn1 = new JButton("1");
+		GridBagConstraints gbc_btn1 = new GridBagConstraints();
+		gbc_btn1.insets = new Insets(0, 0, 5, 5);
+		gbc_btn1.gridx = 3;
+		gbc_btn1.gridy = 2;
+		frame.getContentPane().add(btn1, gbc_btn1);
 		
-		JButton button_1 = new JButton("2");
-		GridBagConstraints gbc_button_1 = new GridBagConstraints();
-		gbc_button_1.insets = new Insets(0, 0, 5, 5);
-		gbc_button_1.gridx = 5;
-		gbc_button_1.gridy = 2;
-		frame.getContentPane().add(button_1, gbc_button_1);
+		JButton btn2 = new JButton("2");
+		GridBagConstraints gbc_btn2 = new GridBagConstraints();
+		gbc_btn2.insets = new Insets(0, 0, 5, 5);
+		gbc_btn2.gridx = 5;
+		gbc_btn2.gridy = 2;
+		frame.getContentPane().add(btn2, gbc_btn2);
 		
-		JButton button_2 = new JButton("3");
-		GridBagConstraints gbc_button_2 = new GridBagConstraints();
-		gbc_button_2.insets = new Insets(0, 0, 5, 0);
-		gbc_button_2.gridx = 7;
-		gbc_button_2.gridy = 2;
-		frame.getContentPane().add(button_2, gbc_button_2);
+		JButton btn3 = new JButton("3");
+		GridBagConstraints gbc_btn3 = new GridBagConstraints();
+		gbc_btn3.insets = new Insets(0, 0, 5, 0);
+		gbc_btn3.gridx = 7;
+		gbc_btn3.gridy = 2;
+		frame.getContentPane().add(btn3, gbc_btn3);
 		
-		JButton button_3 = new JButton("4");
-		GridBagConstraints gbc_button_3 = new GridBagConstraints();
-		gbc_button_3.insets = new Insets(0, 0, 5, 5);
-		gbc_button_3.gridx = 3;
-		gbc_button_3.gridy = 4;
-		frame.getContentPane().add(button_3, gbc_button_3);
+		JButton btn4 = new JButton("4");
+		GridBagConstraints gbc_btn4 = new GridBagConstraints();
+		gbc_btn4.insets = new Insets(0, 0, 5, 5);
+		gbc_btn4.gridx = 3;
+		gbc_btn4.gridy = 4;
+		frame.getContentPane().add(btn4, gbc_btn4);
 		
-		JButton button_4 = new JButton("5");
-		GridBagConstraints gbc_button_4 = new GridBagConstraints();
-		gbc_button_4.insets = new Insets(0, 0, 5, 5);
-		gbc_button_4.gridx = 5;
-		gbc_button_4.gridy = 4;
-		frame.getContentPane().add(button_4, gbc_button_4);
+		JButton btn5 = new JButton("5");
+		GridBagConstraints gbc_btn5 = new GridBagConstraints();
+		gbc_btn5.insets = new Insets(0, 0, 5, 5);
+		gbc_btn5.gridx = 5;
+		gbc_btn5.gridy = 4;
+		frame.getContentPane().add(btn5, gbc_btn5);
 		
-		JButton button_5 = new JButton("6");
-		GridBagConstraints gbc_button_5 = new GridBagConstraints();
-		gbc_button_5.insets = new Insets(0, 0, 5, 0);
-		gbc_button_5.gridx = 7;
-		gbc_button_5.gridy = 4;
-		frame.getContentPane().add(button_5, gbc_button_5);
+		JButton btn6 = new JButton("6");
+		GridBagConstraints gbc_btn6 = new GridBagConstraints();
+		gbc_btn6.insets = new Insets(0, 0, 5, 0);
+		gbc_btn6.gridx = 7;
+		gbc_btn6.gridy = 4;
+		frame.getContentPane().add(btn6, gbc_btn6);
 		
-		JButton button_6 = new JButton("7");
-		GridBagConstraints gbc_button_6 = new GridBagConstraints();
-		gbc_button_6.insets = new Insets(0, 0, 5, 5);
-		gbc_button_6.gridx = 3;
-		gbc_button_6.gridy = 6;
-		frame.getContentPane().add(button_6, gbc_button_6);
+		JButton btn7 = new JButton("7");
+		GridBagConstraints gbc_btn7 = new GridBagConstraints();
+		gbc_btn7.insets = new Insets(0, 0, 5, 5);
+		gbc_btn7.gridx = 3;
+		gbc_btn7.gridy = 6;
+		frame.getContentPane().add(btn7, gbc_btn7);
 		
-		JButton button_7 = new JButton("8");
-		GridBagConstraints gbc_button_7 = new GridBagConstraints();
-		gbc_button_7.insets = new Insets(0, 0, 5, 5);
-		gbc_button_7.gridx = 5;
-		gbc_button_7.gridy = 6;
-		frame.getContentPane().add(button_7, gbc_button_7);
+		JButton btn8 = new JButton("8");
+		GridBagConstraints gbc_btn8 = new GridBagConstraints();
+		gbc_btn8.insets = new Insets(0, 0, 5, 5);
+		gbc_btn8.gridx = 5;
+		gbc_btn8.gridy = 6;
+		frame.getContentPane().add(btn8, gbc_btn8);
 		
-		JButton button_8 = new JButton("9");
-		GridBagConstraints gbc_button_8 = new GridBagConstraints();
-		gbc_button_8.insets = new Insets(0, 0, 5, 0);
-		gbc_button_8.gridx = 7;
-		gbc_button_8.gridy = 6;
-		frame.getContentPane().add(button_8, gbc_button_8);
+		JButton btn9 = new JButton("9");
+		GridBagConstraints gbc_btn9 = new GridBagConstraints();
+		gbc_btn9.insets = new Insets(0, 0, 5, 0);
+		gbc_btn9.gridx = 7;
+		gbc_btn9.gridy = 6;
+		frame.getContentPane().add(btn9, gbc_btn9);
 		
-		JButton button_10 = new JButton(".");
-		GridBagConstraints gbc_button_10 = new GridBagConstraints();
-		gbc_button_10.insets = new Insets(0, 0, 5, 5);
-		gbc_button_10.gridx = 3;
-		gbc_button_10.gridy = 8;
-		frame.getContentPane().add(button_10, gbc_button_10);
+		JButton btnDot = new JButton(".");
+		GridBagConstraints gbc_btnDot = new GridBagConstraints();
+		gbc_btnDot.insets = new Insets(0, 0, 5, 5);
+		gbc_btnDot.gridx = 3;
+		gbc_btnDot.gridy = 8;
+		frame.getContentPane().add(btnDot, gbc_btnDot);
 		
 		JButton button_9 = new JButton("0");
 		GridBagConstraints gbc_button_9 = new GridBagConstraints();
@@ -129,12 +131,12 @@ public class Keyboard {
 		gbc_button_9.gridy = 8;
 		frame.getContentPane().add(button_9, gbc_button_9);
 		
-		JButton button_11 = new JButton("#");
-		GridBagConstraints gbc_button_11 = new GridBagConstraints();
-		gbc_button_11.insets = new Insets(0, 0, 5, 0);
-		gbc_button_11.gridx = 7;
-		gbc_button_11.gridy = 8;
-		frame.getContentPane().add(button_11, gbc_button_11);
+		JButton btnHash = new JButton("#");
+		GridBagConstraints gbc_btnHash = new GridBagConstraints();
+		gbc_btnHash.insets = new Insets(0, 0, 5, 0);
+		gbc_btnHash.gridx = 7;
+		gbc_btnHash.gridy = 8;
+		frame.getContentPane().add(btnHash, gbc_btnHash);
 		
 		JButton btnEnter = new JButton("Enter");
 		GridBagConstraints gbc_btnEnter = new GridBagConstraints();
@@ -148,6 +150,10 @@ public class Keyboard {
 		gbc_btnCencel.gridx = 7;
 		gbc_btnCencel.gridy = 10;
 		frame.getContentPane().add(btnCencel, gbc_btnCencel);
+		
+		//ButtonHandler handler = new ButtonHandler();
+		JButton handler = new JButton();
+		
 	}
 
 }
