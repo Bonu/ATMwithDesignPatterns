@@ -38,6 +38,7 @@ public class MainWindow {
 				try {
 					MainWindow window = new MainWindow();
 					window.frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
