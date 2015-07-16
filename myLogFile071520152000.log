@@ -1,0 +1,8 @@
+Jul 15, 2015 8:00:20 PM edu.mum.cs.ds.atm.RequestHandlerFacade loadData
+SEVERE: Add execute invoked
+Jul 15, 2015 8:00:20 PM edu.mum.cs.ds.atm.RequestHandlerFacade main
+SEVERE: Add execute invoked
+Jul 15, 2015 8:00:20 PM edu.mum.cs.ds.atm.base.Invoker addAndExecute
+INFO: This is the new message
+Jul 15, 2015 8:00:20 PM edu.mum.cs.ds.atm.base.Invoker addAndExecute
+INFO: This is the new message
