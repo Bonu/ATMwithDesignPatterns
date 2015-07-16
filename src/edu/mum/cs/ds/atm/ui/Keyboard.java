@@ -1,17 +1,23 @@
-<<<<<<< HEAD
 package edu.mum.cs.ds.atm.ui;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import java.awt.GridBagLayout;
-import javax.swing.JButton;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
 import java.awt.Color;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import java.awt.EventQueue;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+/**
+	 * Launch the application.
+	 */
+/**
+	 * Create the application.
+	 */
+/**
+	 * Initialize the contents of the frame.
+	 */
+//ButtonHandler handler = new ButtonHandler();
 public class Keyboard {
 
 	private JFrame frame;
@@ -312,4 +318,3 @@ public class Keyboard {
 	}
 
 }
->>>>>>> branch 'master' of https://github.com/Bonu/ATMwithDesignPatterns
