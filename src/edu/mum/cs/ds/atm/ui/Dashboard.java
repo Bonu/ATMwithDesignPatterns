@@ -6,6 +6,9 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.Panel;
 import java.awt.SystemColor;
+import java.awt.TextArea;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,10 +16,20 @@ import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
 
+import edu.mum.cs.ds.atm.RequestHandlerFacade;
+import edu.mum.cs.ds.atm.model.Request;
+import edu.mum.cs.ds.atm.model.Response;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 public class Dashboard {
 
 	private JFrame frame;
 	private JTable table;
+	private JTextField txtDepositamount;
+	private JTextArea textAreaPrint = new JTextArea();
+	
 
 	/**
 	 * Launch the application.
@@ -63,6 +76,15 @@ public class Dashboard {
 		panel.setLayout(gbl_panel);
 		
 		JButton btnBalance = new JButton("Balance");
+		btnBalance.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Request request = new Request("checkBalance","MachineId","1234534232243","fairfield-branch","111111111");
+				RequestHandlerFacade requestHandlerFacade = new RequestHandlerFacade();
+				Response response = requestHandlerFacade.handleRequest(request);
+				textAreaPrint.setText(response.getMessage());
+				
+			}
+		});
 		btnBalance.setHorizontalAlignment(SwingConstants.LEFT);
 		GridBagConstraints gbc_btnBalance = new GridBagConstraints();
 		gbc_btnBalance.insets = new Insets(0, 0, 5, 5);
@@ -78,6 +100,11 @@ public class Dashboard {
 		panel.add(btnBillPayment, gbc_btnBillPayment);
 		
 		JButton btnWithdraw = new JButton("Withdraw");
+		btnWithdraw.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new Withdraw(); 
+			}
+		});
 		GridBagConstraints gbc_btnWithdraw = new GridBagConstraints();
 		gbc_btnWithdraw.insets = new Insets(0, 0, 5, 5);
 		gbc_btnWithdraw.gridx = 0;
@@ -101,10 +128,34 @@ public class Dashboard {
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(12, 389, 391, 169);
 		frame.getContentPane().add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Print");
+		lblNewLabel.setBounds(6, 6, 29, 16);
+		panel_1.add(lblNewLabel);
+		
+		textAreaPrint.setText("--");
+		textAreaPrint.setBounds(6, 20, 379, 143);
+		panel_1.add(textAreaPrint);
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(12, 559, 391, 161);
 		frame.getContentPane().add(panel_3);
+		panel_3.setLayout(null);
+		
+		JLabel lblDeposit = new JLabel("Deposit");
+		lblDeposit.setBounds(6, 6, 49, 16);
+		panel_3.add(lblDeposit);
+		
+		JLabel lblDepositAmount = new JLabel("Deposit Amount");
+		lblDepositAmount.setBounds(17, 59, 123, 16);
+		panel_3.add(lblDepositAmount);
+		
+		txtDepositamount = new JTextField();
+		txtDepositamount.setText("0.0");
+		txtDepositamount.setBounds(128, 53, 134, 28);
+		panel_3.add(txtDepositamount);
+		txtDepositamount.setColumns(10);
 		
 		Panel panel_2 = new Panel();
 		panel_2.setBackground(SystemColor.activeCaption);

@@ -77,8 +77,19 @@ public class RequestHandlerFacade {
 	}
 	
 	
-	public void handleRequest(Request request){
-		
+	public Response handleRequest(Request request){
+		loadData();
+		Invoker invoker = new Invoker();
+        Response response = new Response();
+        Factory factory = new CommandFactory();
+        UndoCommand uc = factory.factoryMethod(request);
+        response = invoker.addAndExecute(uc);
+        SingletonLogger.myLogger.log(Level.INFO, response.toString());
+        SingletonSMS smssender = SingletonSMS.getInstance();
+        CustomerImplementor  customerImplementor = new CustomerImplementor();
+        smssender.setMessage(customerImplementor.getCustomerPhone(response.getRequest().getAccountId()), response.getMessage());
+        
+        return response;
 	}
 	
 	public void preLoadATM(){

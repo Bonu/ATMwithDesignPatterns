@@ -19,6 +19,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.SystemColor;
+import javax.swing.JTextArea;
 
 public class DisplayWindow {
 
@@ -26,6 +27,7 @@ public class DisplayWindow {
 	private JTable table;
 	private JTextField txtPIN;
 	private JTextField txtAccountNumber;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -108,14 +110,37 @@ public class DisplayWindow {
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(12, 389, 391, 169);
 		frame.getContentPane().add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Print");
+		lblNewLabel.setBounds(6, 6, 61, 16);
+		panel_1.add(lblNewLabel);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setBounds(6, 23, 379, 140);
+		panel_1.add(textArea);
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(12, 559, 391, 161);
 		frame.getContentPane().add(panel_3);
+		panel_3.setLayout(null);
+		
+		JLabel lblNewLabel_1 = new JLabel("Deposit");
+		lblNewLabel_1.setBounds(6, 6, 61, 16);
+		panel_3.add(lblNewLabel_1);
+		
+		textField = new JTextField();
+		textField.setBounds(198, 49, 134, 28);
+		panel_3.add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblNewLabel_2 = new JLabel("Enter amount to deposit");
+		lblNewLabel_2.setBounds(23, 55, 163, 16);
+		panel_3.add(lblNewLabel_2);
 		
 		Panel panel_2 = new Panel();
 		panel_2.setBackground(SystemColor.activeCaption);
-		panel_2.setBounds(405, 389, 391, 321);
+		panel_2.setBounds(405, 399, 391, 321);
 		frame.getContentPane().add(panel_2);
 		GridBagLayout gbl_panel_2 = new GridBagLayout();
 		gbl_panel_2.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -197,27 +222,12 @@ public class DisplayWindow {
 		gbc_btn9.gridy = 5;
 		panel_2.add(btn9, gbc_btn9);
 		
-		JButton btnDot = new JButton(".");
-		GridBagConstraints gbc_btnDot = new GridBagConstraints();
-		gbc_btnDot.anchor = GridBagConstraints.NORTH;
-		gbc_btnDot.insets = new Insets(0, 0, 5, 5);
-		gbc_btnDot.gridx = 2;
-		gbc_btnDot.gridy = 7;
-		panel_2.add(btnDot, gbc_btnDot);
-		
 		JButton btn0 = new JButton("0");
 		GridBagConstraints gbc_btn0 = new GridBagConstraints();
 		gbc_btn0.insets = new Insets(0, 0, 5, 5);
 		gbc_btn0.gridx = 4;
 		gbc_btn0.gridy = 7;
 		panel_2.add(btn0, gbc_btn0);
-		
-		JButton btnHash = new JButton("#");
-		GridBagConstraints gbc_btnHash = new GridBagConstraints();
-		gbc_btnHash.insets = new Insets(0, 0, 5, 5);
-		gbc_btnHash.gridx = 6;
-		gbc_btnHash.gridy = 7;
-		panel_2.add(btnHash, gbc_btnHash);
 		
 		JButton btnEnter = new JButton("Enter");
 		GridBagConstraints gbc_btnEnter = new GridBagConstraints();
