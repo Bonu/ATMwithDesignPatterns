@@ -21,9 +21,9 @@ import java.awt.Color;
 import java.awt.SystemColor;
 import javax.swing.JTextArea;
 
-public class DisplayWindow {
+public class MainWindow {
 
-	private JFrame frame;
+	public JFrame frame;
 	private JTable table;
 	private JTextField txtPIN;
 	private JTextField txtAccountNumber;
@@ -36,7 +36,7 @@ public class DisplayWindow {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					DisplayWindow window = new DisplayWindow();
+					MainWindow window = new MainWindow();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -48,7 +48,7 @@ public class DisplayWindow {
 	/**
 	 * Create the application.
 	 */
-	public DisplayWindow() {
+	public MainWindow() {
 		initialize();
 	}
 
@@ -230,6 +230,12 @@ public class DisplayWindow {
 		panel_2.add(btn0, gbc_btn0);
 		
 		JButton btnEnter = new JButton("Enter");
+		btnEnter.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Dashboard window = new Dashboard();
+				window.frame.setVisible(true);
+			}
+		});
 		GridBagConstraints gbc_btnEnter = new GridBagConstraints();
 		gbc_btnEnter.insets = new Insets(0, 0, 5, 5);
 		gbc_btnEnter.gridx = 2;
@@ -237,6 +243,12 @@ public class DisplayWindow {
 		panel_2.add(btnEnter, gbc_btnEnter);
 		
 		JButton btnCancel = new JButton("Cancel");
+		btnCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainWindow window = new MainWindow();
+				window.frame.setVisible(true);
+			}
+		});
 		GridBagConstraints gbc_btnCancel = new GridBagConstraints();
 		gbc_btnCancel.insets = new Insets(0, 0, 5, 5);
 		gbc_btnCancel.gridx = 6;
