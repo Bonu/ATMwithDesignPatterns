@@ -19,7 +19,7 @@ public class RequestHandlerFacade {
 	Account account1;
 	
 	public ATMMachine machine007=null;
-	SingletonLogger  loggerWrapper = SingletonLogger.getInstance();
+	private SingletonLogger  loggerWrapper = SingletonLogger.getInstance();
 	
 	/**
 	 * @param args
@@ -28,7 +28,7 @@ public class RequestHandlerFacade {
 
 		RequestHandlerFacade main  = new RequestHandlerFacade();
 		main.loadData();
-		SingletonLogger.myLogger.log(Level.SEVERE, "Add execute invoked");
+		loggerWrapper.myLogger.log(Level.SEVERE, "Add execute invoked");
 //	    System.out.println("Enter card number");
 //        Scanner input = new Scanner(System.in);
 //        String card = input.next();
