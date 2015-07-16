@@ -16,12 +16,13 @@ import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.JTextArea;
 
 public class Deposit {
 
 	public JFrame frame;
 	private JTable table;
-	private JTextField textField;
+	private JTextField textFieldDeposit;
 
 	/**
 	 * Launch the application.
@@ -67,7 +68,7 @@ public class Deposit {
 		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		panel.setLayout(gbl_panel);
 		
-		JLabel lblEnterTheWithdral = new JLabel("Enter the deposit Amount");
+		JLabel lblEnterTheWithdral = new JLabel("Deposit amount in below depositor");
 		GridBagConstraints gbc_lblEnterTheWithdral = new GridBagConstraints();
 		gbc_lblEnterTheWithdral.anchor = GridBagConstraints.EAST;
 		gbc_lblEnterTheWithdral.insets = new Insets(0, 0, 5, 5);
@@ -75,23 +76,37 @@ public class Deposit {
 		gbc_lblEnterTheWithdral.gridy = 3;
 		panel.add(lblEnterTheWithdral, gbc_lblEnterTheWithdral);
 		
-		textField = new JTextField();
-		textField.setHorizontalAlignment(SwingConstants.LEFT);
-		GridBagConstraints gbc_textField = new GridBagConstraints();
-		gbc_textField.anchor = GridBagConstraints.NORTHWEST;
-		gbc_textField.insets = new Insets(0, 0, 5, 5);
-		gbc_textField.gridx = 2;
-		gbc_textField.gridy = 3;
-		panel.add(textField, gbc_textField);
-		textField.setColumns(10);
-		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(12, 389, 391, 169);
 		frame.getContentPane().add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel lblPrint = new JLabel("Print");
+		lblPrint.setBounds(0, 6, 29, 16);
+		panel_1.add(lblPrint);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setBounds(0, 27, 385, 136);
+		panel_1.add(textArea);
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(12, 559, 391, 161);
 		frame.getContentPane().add(panel_3);
+		panel_3.setLayout(null);
+		
+		JLabel lblDeposit = new JLabel("Deposit");
+		lblDeposit.setBounds(6, 6, 49, 16);
+		panel_3.add(lblDeposit);
+		
+		textFieldDeposit = new JTextField();
+		textFieldDeposit.setText("0.0");
+		textFieldDeposit.setBounds(184, 49, 134, 28);
+		panel_3.add(textFieldDeposit);
+		textFieldDeposit.setColumns(10);
+		
+		JLabel lblEnterAmount = new JLabel("Enter amount");
+		lblEnterAmount.setBounds(69, 55, 103, 16);
+		panel_3.add(lblEnterAmount);
 		
 		Panel panel_2 = new Panel();
 		panel_2.setBackground(SystemColor.activeCaption);
