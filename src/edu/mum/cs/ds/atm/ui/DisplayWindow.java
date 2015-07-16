@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 //<<<<<<< HEAD
+=======
+>>>>>>> branch 'master' of https://github.com/Bonu/ATMwithDesignPatterns
 package edu.mum.cs.ds.atm.ui;
 
 import java.awt.EventQueue;
@@ -236,4 +239,8 @@ public class DisplayWindow {
 		
 
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> branch 'master' of https://github.com/Bonu/ATMwithDesignPatterns
